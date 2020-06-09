@@ -19,6 +19,9 @@
       <template v-slot:item.name="{ item }">
         <a class="no-underline hover:text-gray-800 font-bold text-gray-600 text-sm p-3" :href="item.web" target="_blank"> {{ item.name }}</a>
       </template>
+      <template v-slot:item.borough="{ item }">
+        <a class="no-underline hover:text-gray-800 font-bold text-gray-600 text-sm p-3" :href="item.address" target="_blank"> {{ item.borough }}</a>
+      </template>
     </v-data-table>
   </v-app>
 </template>
@@ -47,7 +50,8 @@
             borough: 'Villeray-Saint-Michel-Parc-Extension',
             cuisine: 'Haitian/Haïtienne',
             availability: 'Takeout',
-            web: 'http://www.yelp.ca/biz/march%C3%A9-m%C3%A9li-m%C3%A9lo-montr%C3%A9al-4'
+            web: 'http://www.yelp.ca/biz/march%C3%A9-m%C3%A9li-m%C3%A9lo-montr%C3%A9al-4',
+            address: 'https://www.google.com/maps/place/640+Rue+Jarry+E,+Montréal,+QC+H2P+1V7/'
           },
           {
             name: 'test restaurant',
@@ -107,6 +111,104 @@
           },
           {
             name: 'KitKat',
+            borough: 518,
+            cuisine: 26.0,
+            availability: 65,
+            web: 'https://www.yelp.ca/biz/march%C3%A9-m%C3%A9li-m%C3%A9lo-montr%C3%A9al-4'
+          },
+          {
+            name: 'KitKat222222',
+            borough: 518,
+            cuisine: 26.0,
+            availability: 65,
+            web: 'https://www.yelp.ca/biz/march%C3%A9-m%C3%A9li-m%C3%A9lo-montr%C3%A9al-4'
+          },
+          {
+            name: 'KitKat222222',
+            borough: 518,
+            cuisine: 26.0,
+            availability: 65,
+            web: 'https://www.yelp.ca/biz/march%C3%A9-m%C3%A9li-m%C3%A9lo-montr%C3%A9al-4'
+          },
+          {
+            name: 'KitKat222222',
+            borough: 518,
+            cuisine: 26.0,
+            availability: 65,
+            web: 'https://www.yelp.ca/biz/march%C3%A9-m%C3%A9li-m%C3%A9lo-montr%C3%A9al-4'
+          },
+          {
+            name: 'KitKat222222',
+            borough: 518,
+            cuisine: 26.0,
+            availability: 65,
+            web: 'https://www.yelp.ca/biz/march%C3%A9-m%C3%A9li-m%C3%A9lo-montr%C3%A9al-4'
+          },
+          {
+            name: 'KitKat222222',
+            borough: 518,
+            cuisine: 26.0,
+            availability: 65,
+            web: 'https://www.yelp.ca/biz/march%C3%A9-m%C3%A9li-m%C3%A9lo-montr%C3%A9al-4'
+          },
+          {
+            name: 'KitKat222222',
+            borough: 518,
+            cuisine: 26.0,
+            availability: 65,
+            web: 'https://www.yelp.ca/biz/march%C3%A9-m%C3%A9li-m%C3%A9lo-montr%C3%A9al-4'
+          },
+          {
+            name: 'KitKat222222',
+            borough: 518,
+            cuisine: 26.0,
+            availability: 65,
+            web: 'https://www.yelp.ca/biz/march%C3%A9-m%C3%A9li-m%C3%A9lo-montr%C3%A9al-4'
+          },
+          {
+            name: 'KitKat222222',
+            borough: 518,
+            cuisine: 26.0,
+            availability: 65,
+            web: 'https://www.yelp.ca/biz/march%C3%A9-m%C3%A9li-m%C3%A9lo-montr%C3%A9al-4'
+          },
+          {
+            name: 'KitKat222222',
+            borough: 518,
+            cuisine: 26.0,
+            availability: 65,
+            web: 'https://www.yelp.ca/biz/march%C3%A9-m%C3%A9li-m%C3%A9lo-montr%C3%A9al-4'
+          },
+          {
+            name: 'KitKat222222',
+            borough: 518,
+            cuisine: 26.0,
+            availability: 65,
+            web: 'https://www.yelp.ca/biz/march%C3%A9-m%C3%A9li-m%C3%A9lo-montr%C3%A9al-4'
+          },
+          {
+            name: 'KitKat222222',
+            borough: 518,
+            cuisine: 26.0,
+            availability: 65,
+            web: 'https://www.yelp.ca/biz/march%C3%A9-m%C3%A9li-m%C3%A9lo-montr%C3%A9al-4'
+          },
+          {
+            name: 'KitKat222222',
+            borough: 518,
+            cuisine: 26.0,
+            availability: 65,
+            web: 'https://www.yelp.ca/biz/march%C3%A9-m%C3%A9li-m%C3%A9lo-montr%C3%A9al-4'
+          },
+          {
+            name: 'KitKat222222',
+            borough: 518,
+            cuisine: 26.0,
+            availability: 65,
+            web: 'https://www.yelp.ca/biz/march%C3%A9-m%C3%A9li-m%C3%A9lo-montr%C3%A9al-4'
+          },
+          {
+            name: 'KitKat222222',
             borough: 518,
             cuisine: 26.0,
             availability: 65,

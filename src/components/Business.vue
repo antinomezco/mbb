@@ -19,6 +19,9 @@
       <template v-slot:item.name="{ item }">
         <a class="no-underline hover:text-gray-800 font-bold text-gray-600 text-sm p-3" :href="item.web" target="_blank"> {{ item.name }}</a>
       </template>
+      <template v-slot:item.borough="{ item }">
+        <a class="no-underline hover:text-gray-800 font-bold text-gray-600 text-sm p-3" :href="item.address" target="_blank"> {{ item.borough }}</a>
+      </template>
     </v-data-table>
   </v-app>
 </template>
@@ -42,11 +45,11 @@
         ],
         businesses: [
           {
-            name: 'Frozen Yogurt',
-            borough: 'somplace',
-            commerce: 'sports goods',
-            web: 'http://www.google.com',
-            iron: '1%',
+            name: 'Coiffure',
+            borough: 'Ville-émard',
+            commerce: 'Haircut',
+            web: 'https://www.google.com/maps/place/6581+Boulevard+Monk,+Montréal,+QC+H4E+3J2/',
+            address: 'https://www.google.com/maps/place/6581+Boulevard+Monk,+Montréal,+QC+H4E+3J2/',
           },
           {
             name: 'Ice cream sandwich',
