@@ -15,7 +15,11 @@
       :headers="headers"
       :items="restaurants"
       :search="search"
-    ></v-data-table>
+    >
+      <template v-slot:item.name="{ item }">
+        <a class="no-underline hover:text-gray-800 font-bold text-gray-600 text-sm p-3" :href="item.web" target="_blank"> {{ item.name }}</a>
+      </template>
+    </v-data-table>
   </v-app>
 </template>
 
@@ -35,7 +39,7 @@
           { text: 'Borough/Arondissement', value: 'borough' },
           { text: 'Cuisine', value: 'cuisine' },
           { text: 'Availability/Disponibilité', value: 'availability' },
-          { text: 'Website or IG/page web ou IG', value: 'web' },
+          { text: 'IG if available/si disponible', value: 'ig' },
         ],
         restaurants: [
           {
@@ -43,21 +47,21 @@
             borough: 'Villeray-Saint-Michel-Parc-Extension',
             cuisine: 'Haitian/Haïtienne',
             availability: 'Takeout',
-            web: '<a href=https://www.yelp.ca/biz/march%C3%A9-m%C3%A9li-m%C3%A9lo-montr%C3%A9al-4>'
+            web: 'http://www.yelp.ca/biz/march%C3%A9-m%C3%A9li-m%C3%A9lo-montr%C3%A9al-4'
           },
           {
             name: 'test restaurant',
             borough: 'somewhere',
             cuisine: 'mexican',
             availability: 'delivery',
-            web: ' <a href="https://www.w3schools.com">Visit W3Schools.com!</a> '
+            web: 'https://www.w3schools.com">Visit W3Schools.com'
           },
           {
             name: 'Eclair',
             borough: 'Hochelaga-Maisonneuve',
             cuisine: 'Cameroonian',
             availability: 'delivery',
-            web: '<div v-html="https://www.w3schools.com">Visit W3Schools.com!</div>'
+            web: 'https://www.w3schools.com">Visit W3Schools.com'
           },
           {
             name: 'Cupcake',

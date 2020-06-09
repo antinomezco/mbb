@@ -13,9 +13,13 @@
     </v-card-title>
     <v-data-table
       :headers="headers"
-      :items="desserts"
+      :items="businesses"
       :search="search"
-    ></v-data-table>
+    >
+      <template v-slot:item.name="{ item }">
+        <a class="no-underline hover:text-gray-800 font-bold text-gray-600 text-sm p-3" :href="item.web" target="_blank"> {{ item.name }}</a>
+      </template>
+    </v-data-table>
   </v-app>
 </template>
 
@@ -34,15 +38,14 @@
           },
           { text: 'Borough/Arondissement', value: 'borough' },
           { text: 'Business type/type de commerce', value: 'commerce' },
-          { text: 'Website or IG/page web ou IG', value: 'web' },
+          { text: 'IG if available/si disponible', value: 'ig' },
         ],
-        desserts: [
+        businesses: [
           {
             name: 'Frozen Yogurt',
             borough: 'somplace',
             commerce: 'sports goods',
-            web: '@example',
-            protein: 4.0,
+            web: 'http://www.google.com',
             iron: '1%',
           },
           {

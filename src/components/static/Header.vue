@@ -35,7 +35,4 @@
 </script>
 
 <style>
-.v-application--wrap {
-  min-height: 1vh;
-}
 </style>
