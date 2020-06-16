@@ -4,11 +4,20 @@
       <p class="text-left">Montreal Black Businesses Directory</p>
       <v-row class="`d-flex justify-start mb-6`">
           <div class="ma-2">
+            <v-btn outlined color="indigo" to="/">About</v-btn>
+          </div>
+          <div class="ma-2">
+            <v-btn outlined color="indigo" to="/restaurant">Restaurant</v-btn>
+          </div>
+          <div class="ma-2">
+            <v-btn outlined color="indigo" to="/business">Business</v-btn>
+          </div>
+          <!--<div class="ma-2">
             <v-btn outlined color="indigo" @click="cambiarProyecto('Restaurant')">Restaurant</v-btn>
           </div>
           <div class="ma-2">
             <v-btn outlined color="indigo" @click="cambiarProyecto('Business')">Business</v-btn>
-          </div>
+          </div>-->
       </v-row>
     </v-container>
     <hr>

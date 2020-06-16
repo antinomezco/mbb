@@ -23,11 +23,13 @@
         <a class="no-underline hover:text-gray-800 font-bold text-gray-600 text-sm p-3" :href="item.address" target="_blank"> {{ item.borough }}</a>
       </template>
     </v-data-table>
+    
   </v-app>
 </template>
 
 
 <script>
+import { businessRefexp } from './static/Body.vue'
   export default {
     data () {
       return {
@@ -43,7 +45,8 @@
           { text: 'Business type/type de commerce', value: 'commerce' },
           { text: 'IG if available/si disponible', value: 'ig' },
         ],
-        businesses: [
+        businesses: [],
+        exampleBusinesses: [
           {
             name: 'Coiffure',
             borough: 'Ville-émard',
@@ -51,80 +54,22 @@
             web: 'https://www.google.com/maps/place/6581+Boulevard+Monk,+Montréal,+QC+H4E+3J2/',
             address: 'https://www.google.com/maps/place/6581+Boulevard+Monk,+Montréal,+QC+H4E+3J2/',
           },
-          {
-            name: 'Ice cream sandwich',
-            calories: 237,
-            fat: 9.0,
-            carbs: 37,
-            protein: 4.3,
-            iron: '1%',
-          },
-          {
-            name: 'Eclair',
-            calories: 262,
-            fat: 16.0,
-            carbs: 23,
-            protein: 6.0,
-            iron: '7%',
-          },
-          {
-            name: 'Cupcake',
-            calories: 305,
-            fat: 3.7,
-            carbs: 67,
-            protein: 4.3,
-            iron: '8%',
-          },
-          {
-            name: 'Gingerbread',
-            calories: 356,
-            fat: 16.0,
-            carbs: 49,
-            protein: 3.9,
-            iron: '16%',
-          },
-          {
-            name: 'Jelly bean',
-            calories: 375,
-            fat: 0.0,
-            carbs: 94,
-            protein: 0.0,
-            iron: '0%',
-          },
-          {
-            name: 'Lollipop',
-            calories: 392,
-            fat: 0.2,
-            carbs: 98,
-            protein: 0,
-            iron: '2%',
-          },
-          {
-            name: 'Honeycomb',
-            calories: 408,
-            fat: 3.2,
-            carbs: 87,
-            protein: 6.5,
-            iron: '45%',
-          },
-          {
-            name: 'Donut',
-            calories: 452,
-            fat: 25.0,
-            carbs: 51,
-            protein: 4.9,
-            iron: '22%',
-          },
-          {
-            name: 'KitKat',
-            calories: 518,
-            fat: 26.0,
-            carbs: 65,
-            protein: 7,
-            iron: '6%',
-          },
         ],
       }
     },
+    created() {
+    businessRefexp.once("value", businesses => {
+      businesses.forEach(business => {
+        this.businesses.push({
+          id: business.ref.key,
+          name: business.child("name").val(),
+          borough: business.child("borough").val(),
+          commerce: business.child("commerce").val(),
+          web: business.child("web").val(),
+          address: business.child("address").val(),
+        });
+      });
+    });
+    }
   }
 </script>
