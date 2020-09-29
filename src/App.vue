@@ -14,7 +14,7 @@ import Header from './components/static/Header.vue'
 // import Body from './components/static/Body.vue'
 
 export default {
-  name: 'App',
+  name: 'app',
   components: {
     appHeader: Header,
     // appBody: Body

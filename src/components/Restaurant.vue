@@ -28,7 +28,7 @@
 
 
 <script>
-import { restaurantRefexp } from './static/Body.vue'
+import {getAPI} from '../axios-api'
 export default {
     data () {
       return {
@@ -59,19 +59,14 @@ export default {
       }
     },
     created() {
-    restaurantRefexp.once("value", restaurants => {
-      restaurants.forEach(restaurant => {
-        this.restaurants.push({
-          id: restaurant.ref.key,
-          name: restaurant.child("name").val(),
-          borough: restaurant.child("borough").val(),
-          cuisine: restaurant.child("cuisine").val(),
-          availability: restaurant.child("availability").val(),
-          web: restaurant.child("web").val(),
-          address: restaurant.child("address").val(),
-        });
-      });
-    });
+      getAPI.get('/restaurant',)
+        .then(response => {
+          console.log('received data')
+          this.restaurants = response.data
+        })
+        .catch(err => {
+          console.log(err)
+        })
     }
   }
 </script>

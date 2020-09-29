@@ -29,7 +29,7 @@
 
 
 <script>
-import { businessRefexp } from './static/Body.vue'
+import {getAPI} from '../axios-api'
   export default {
     data () {
       return {
@@ -58,18 +58,14 @@ import { businessRefexp } from './static/Body.vue'
       }
     },
     created() {
-    businessRefexp.once("value", businesses => {
-      businesses.forEach(business => {
-        this.businesses.push({
-          id: business.ref.key,
-          name: business.child("name").val(),
-          borough: business.child("borough").val(),
-          commerce: business.child("commerce").val(),
-          web: business.child("web").val(),
-          address: business.child("address").val(),
-        });
-      });
-    });
+      getAPI.get('/business',)
+        .then(response => {
+          console.log('received data')
+          this.restaurants = response.data
+        })
+        .catch(err => {
+          console.log(err)
+        })
     }
   }
 </script>

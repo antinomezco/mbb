@@ -3,7 +3,7 @@ import Business from './components/Business.vue'
 import About from './components/About.vue'
 
 export const routes = [
-    { path: '/', component: About },
+    { path: '/', alias: '/about', component: About },
     { path: '/business', component: Business },
     { path: '/restaurant', component: Restaurant },
     { path: '*', redirect: '/' }
